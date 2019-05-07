@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "programme_titles",
+                "available_from_date",
+                "available_to_date"
+            ]
+        },
+        "show_all_activity": {
+            "required": false,
+            "type": "boolean"
+        },
+        "X_Authentication_Provider": {
+            "required": true,
+            "type": "string",
+            "default": "idv5"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

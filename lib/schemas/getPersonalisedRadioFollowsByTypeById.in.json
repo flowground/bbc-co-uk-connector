@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "type": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "brands",
+                "series"
+            ]
+        },
+        "pid": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Authentication_Provider": {
+            "required": true,
+            "type": "string",
+            "default": "idv5"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

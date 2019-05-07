@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "since": {
+            "required": false,
+            "type": "string"
+        },
+        "until": {
+            "required": false,
+            "type": "string"
+        },
+        "decomposed": {
+            "required": false,
+            "type": "boolean"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

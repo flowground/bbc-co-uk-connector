@@ -1,0 +1,51 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "requestBody": {
+            "properties": {
+                "action": {
+                    "enum": [
+                        "started",
+                        "ended",
+                        "paused",
+                        "heartbeat"
+                    ],
+                    "type": "string"
+                },
+                "elapsed_time": {
+                    "type": "integer"
+                },
+                "pid": {
+                    "type": "string"
+                },
+                "resource_type": {
+                    "enum": [
+                        "episode",
+                        "clip"
+                    ],
+                    "type": "string"
+                },
+                "version_pid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "action",
+                "elapsed_time",
+                "pid",
+                "resource_type",
+                "version_pid"
+            ],
+            "type": "object"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

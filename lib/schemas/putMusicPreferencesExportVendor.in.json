@@ -1,0 +1,76 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "vendor": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "spotify",
+                "deezer",
+                "youtube",
+                "itunes"
+            ]
+        },
+        "requestBody": {
+            "properties": {
+                "access_expires_at": {
+                    "type": "string"
+                },
+                "access_token": {
+                    "type": "string"
+                },
+                "add_plus_export": {
+                    "type": "boolean"
+                },
+                "authorization_code": {
+                    "type": "string"
+                },
+                "last_export": {
+                    "type": "string"
+                },
+                "legacy_state": {
+                    "type": "string"
+                },
+                "partner_id": {
+                    "type": "string"
+                },
+                "refresh_token": {
+                    "type": "string"
+                },
+                "terms": {
+                    "type": "boolean"
+                },
+                "vendor": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "access_expires_at",
+                "access_token",
+                "add_plus_export",
+                "authorization_code",
+                "last_export",
+                "legacy_state",
+                "partner_id",
+                "refresh_token",
+                "terms",
+                "vendor"
+            ],
+            "type": "object"
+        },
+        "X_Authentication_Provider": {
+            "required": true,
+            "type": "string",
+            "default": "idv5"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

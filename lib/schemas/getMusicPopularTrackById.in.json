@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "since": {
+            "required": false,
+            "type": "string"
+        },
+        "until": {
+            "required": false,
+            "type": "string"
+        },
+        "network": {
+            "required": false,
+            "type": "string"
+        },
+        "programme": {
+            "required": false,
+            "type": "string"
+        },
+        "artist": {
+            "required": false,
+            "type": "string"
+        },
+        "decomposed": {
+            "required": false,
+            "type": "boolean"
+        },
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

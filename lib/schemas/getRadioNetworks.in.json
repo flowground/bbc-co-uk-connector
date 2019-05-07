@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "preset": {
+            "required": false,
+            "type": "boolean"
+        },
+        "international": {
+            "required": false,
+            "type": "boolean"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

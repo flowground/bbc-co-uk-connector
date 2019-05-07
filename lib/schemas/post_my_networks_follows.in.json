@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer"
+        },
+        "requestBody": {
+            "properties": {
+                "platform": {
+                    "enum": [
+                        "responsiveweb",
+                        "app"
+                    ],
+                    "type": "string"
+                },
+                "service_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "platform",
+                "service_id"
+            ],
+            "type": "object"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "action": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "followed",
+                "unfollowed"
+            ]
+        },
+        "music_context": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "events",
+                "ivote",
+                "music",
+                "musicplaylist",
+                "programmes",
+                "radio",
+                "unknown"
+            ]
+        },
+        "music_within_uk": {
+            "required": false,
+            "type": "boolean"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer"
+        },
+        "X_Authentication_Provider": {
+            "required": true,
+            "type": "string",
+            "default": "idv5"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        },
+        "music_data": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}

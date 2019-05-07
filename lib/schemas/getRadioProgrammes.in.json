@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "properties": {
+        "kind": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "tleo"
+            ]
+        },
+        "network": {
+            "required": false,
+            "type": "string"
+        },
+        "network_url_key": {
+            "required": false,
+            "type": "string"
+        },
+        "category": {
+            "required": false,
+            "type": "string"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "available_from_date",
+                "-available_from_date",
+                "title",
+                "-title"
+            ]
+        },
+        "container": {
+            "required": false,
+            "type": "string"
+        },
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "brand",
+                "series",
+                "episode",
+                "clip",
+                "episode,clip"
+            ]
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

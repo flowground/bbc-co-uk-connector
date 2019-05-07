@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "pid": {
+            "required": true,
+            "type": "string"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

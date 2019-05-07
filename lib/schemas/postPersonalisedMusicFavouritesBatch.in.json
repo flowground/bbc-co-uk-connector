@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "requestBody": {
+            "items": {
+                "properties": {
+                    "action": {
+                        "type": "string"
+                    },
+                    "added_at": {
+                        "type": "string"
+                    },
+                    "context": {
+                        "type": "string"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "meta_data": {
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "key"
+                        ],
+                        "type": "object"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "action",
+                    "domain",
+                    "id",
+                    "type"
+                ],
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "X_Authentication_Provider": {
+            "required": true,
+            "type": "string",
+            "default": "idv5"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "type": "object",
+    "properties": {
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "episode",
+                "clip",
+                "episode,clip"
+            ]
+        },
+        "distinct": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "tleo"
+            ]
+        },
+        "network": {
+            "required": false,
+            "type": "string"
+        },
+        "network_url_key": {
+            "required": false,
+            "type": "string"
+        },
+        "category": {
+            "required": false,
+            "type": "string"
+        },
+        "format": {
+            "required": false,
+            "type": "string"
+        },
+        "group": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "tv",
+                "radio",
+                "tv,radio"
+            ]
+        },
+        "media_type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "audio",
+                "video",
+                "audio,video"
+            ]
+        },
+        "container": {
+            "required": false,
+            "type": "string"
+        },
+        "media_set": {
+            "required": false,
+            "type": "array",
+            "items": {},
+            "enum": [
+                "pc",
+                "mobile-download",
+                "android-download-high",
+                "apple-ios-download-high",
+                "mobile-cellular-main",
+                "mobile-phone-main",
+                "iptv-all"
+            ]
+        },
+        "q": {
+            "required": false,
+            "type": "string"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "vendor": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "spotify",
+                "deezer",
+                "youtube",
+                "itunes"
+            ]
+        },
+        "X_Authentication_Provider": {
+            "required": true,
+            "type": "string",
+            "default": "idv5"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

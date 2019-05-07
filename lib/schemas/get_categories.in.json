@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "kind": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "promoted"
+            ]
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

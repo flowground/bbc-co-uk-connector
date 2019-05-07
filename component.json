@@ -1,0 +1,1304 @@
+{
+    "title": "Radio & Music Services",
+    "description": "We encapsulate Radio & Music business logic for iPlayer Radio and BBC Music products on all platforms. We add value by reliably providing the right blend of metadata needed by clients.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/bbc.co.uk/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://rms.api.bbc.co.uk/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_broadcasts": {
+            "main": "./lib/actions/get_broadcasts.js",
+            "title": "Broadcasts",
+            "description": "All broadcasts\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_broadcasts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_broadcasts_latest": {
+            "main": "./lib/actions/get_broadcasts_latest.js",
+            "title": "Latest Broadcasts",
+            "description": "Broadcasts for the current day\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_broadcasts_latest.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getBroadcastByPid": {
+            "main": "./lib/actions/getBroadcastByPid.js",
+            "title": "Broadcasts by PID",
+            "description": "Find broadcast by PID\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getBroadcastByPid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_categories": {
+            "main": "./lib/actions/get_categories.js",
+            "title": "List of categories",
+            "description": "Retrieve Categories\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_categories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_categories__id_": {
+            "main": "./lib/actions/get_categories__id_.js",
+            "title": "Category by ID",
+            "description": "Retrieve Categories by ID\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_categories__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCollectionMembers": {
+            "main": "./lib/actions/getCollectionMembers.js",
+            "title": "Collection Members",
+            "description": "Episodes and Clips from Collection\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCollectionMembers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getExperienceHomepage": {
+            "main": "./lib/actions/getExperienceHomepage.js",
+            "title": "Homepage Experience",
+            "description": "Homepage Experience\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getExperienceHomepage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicPopularArtists": {
+            "main": "./lib/actions/getMusicPopularArtists.js",
+            "title": "Popular Artists",
+            "description": "List of Most Popular artists from BBC Music.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicPopularArtists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicPopularArtistById": {
+            "main": "./lib/actions/getMusicPopularArtistById.js",
+            "title": "Single Artist Popularity",
+            "description": "Popularity Artist By Id\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicPopularArtistById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicPopularPlaylists": {
+            "main": "./lib/actions/getMusicPopularPlaylists.js",
+            "title": "Popular Playlists",
+            "description": "List of Most Popular playlists from BBC Music.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicPopularPlaylists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicPopularPlaylistById": {
+            "main": "./lib/actions/getMusicPopularPlaylistById.js",
+            "title": "Single Playlist Popularity",
+            "description": "Popular playlist by Id\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicPopularPlaylistById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicPopularTracks": {
+            "main": "./lib/actions/getMusicPopularTracks.js",
+            "title": "Popular Tracks",
+            "description": "List of popular tracks for BBC Music. Filter by time, network, artist, playlist or programme.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicPopularTracks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicPopularTrackById": {
+            "main": "./lib/actions/getMusicPopularTrackById.js",
+            "title": "Single Track Popularity",
+            "description": "Popular Track for BBC Music\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicPopularTrackById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_categories_follows": {
+            "main": "./lib/actions/delete_my_categories_follows.js",
+            "title": "Unfollow category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_categories_follows.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_categories_follows": {
+            "main": "./lib/actions/get_my_categories_follows.js",
+            "title": "List of followed categories",
+            "description": "List of followed categories for a given user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_categories_follows.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_categories_follows": {
+            "main": "./lib/actions/post_my_categories_follows.js",
+            "title": "Follow category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_categories_follows.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicExport": {
+            "main": "./lib/actions/getMusicExport.js",
+            "title": "Music Exports",
+            "description": "Returns status of all previous third party export actions for a given BBC Music user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicExport.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicExportJobs": {
+            "main": "./lib/actions/getMusicExportJobs.js",
+            "title": "Music Export Jobs",
+            "description": "All items associated to a users export request\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicExportJobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postMusicExportJob": {
+            "main": "./lib/actions/postMusicExportJob.js",
+            "title": "Music Export Jobs",
+            "description": "Create Export Job for a user\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postMusicExportJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicExportTracks": {
+            "main": "./lib/actions/getMusicExportTracks.js",
+            "title": "Music Export Tracks",
+            "description": "Retrieves vendor and status specific tracks\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicExportTracks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedMusicFavourites": {
+            "main": "./lib/actions/getPersonalisedMusicFavourites.js",
+            "title": "Favourite Tracks or Clips",
+            "description": "List of favourited tracks and clips for a given user for BBC Music.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedMusicFavourites.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postPersonalisedMusicFavouritesBatch": {
+            "main": "./lib/actions/postPersonalisedMusicFavouritesBatch.js",
+            "title": "Favourite Tracks or Clips",
+            "description": "Add multiple tracks and/or clips to a BBC Music user's favourites.\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postPersonalisedMusicFavouritesBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "putPersonalisedMusicFavouritesBatch": {
+            "main": "./lib/actions/putPersonalisedMusicFavouritesBatch.js",
+            "title": "Favourite Tracks or Clips",
+            "description": "Update tracks or clips from a BBC Music user favourites.\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putPersonalisedMusicFavouritesBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedMusicFavouritesByType": {
+            "main": "./lib/actions/getPersonalisedMusicFavouritesByType.js",
+            "title": "Favourite Tracks or Clips by Type",
+            "description": "List of favourited tracks or clips for a given user for BBC Music.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedMusicFavouritesByType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deletePersonalisedMusicFavouritesByTypeById": {
+            "main": "./lib/actions/deletePersonalisedMusicFavouritesByTypeById.js",
+            "title": "Favourite Track or Clip",
+            "description": "Delete track or clip from a BBC Music user favourites.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deletePersonalisedMusicFavouritesByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedMusicFavouritesByTypeById": {
+            "main": "./lib/actions/getPersonalisedMusicFavouritesByTypeById.js",
+            "title": "Favourite Track or Clip",
+            "description": "Check to see if a single track or clip entity is in a users favourites - determines UX of add button.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedMusicFavouritesByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postPersonalisedMusicFavouritesByTypeById": {
+            "main": "./lib/actions/postPersonalisedMusicFavouritesByTypeById.js",
+            "title": "Favourite Track or Clip",
+            "description": "Add track or clip to a BBC Music user favourites.\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postPersonalisedMusicFavouritesByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "putPersonalisedMusicFavouritesByTypeById": {
+            "main": "./lib/actions/putPersonalisedMusicFavouritesByTypeById.js",
+            "title": "Favourite Track or Clip",
+            "description": "Update tracks or clips from a BBC Music user favourites.\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putPersonalisedMusicFavouritesByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedMusicFollows": {
+            "main": "./lib/actions/getPersonalisedMusicFollows.js",
+            "title": "Followed Networks, Categories, Artists, Playlists and Genres",
+            "description": "List of followed networks, categories, artists, playlists and genres for a given user for BBC Music.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedMusicFollows.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postPersonalisedMusicFollowsBatch": {
+            "main": "./lib/actions/postPersonalisedMusicFollowsBatch.js",
+            "title": "Followed Networks, Categories, Artists, Playlists and Genres",
+            "description": "Add networks, categories, artists, playlists, networks, genres or services in a users follows\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postPersonalisedMusicFollowsBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "putPersonalisedMusicFollowsBatch": {
+            "main": "./lib/actions/putPersonalisedMusicFollowsBatch.js",
+            "title": "Followed Networks, Categories, Artists, Playlists and Genres",
+            "description": "Update networks, categories, artists, playlists, networks, genres or services in a users follows\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putPersonalisedMusicFollowsBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedMusicFollowsByType": {
+            "main": "./lib/actions/getPersonalisedMusicFollowsByType.js",
+            "title": "Followed Networks, Categories, Artists, Playlists and Genres by Type",
+            "description": "List of followed networks, categories, artists, playlists, networks, genres, categories or services for a given BBC Music user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedMusicFollowsByType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deletePersonalisedMusicFollowsByTypeById": {
+            "main": "./lib/actions/deletePersonalisedMusicFollowsByTypeById.js",
+            "title": "Followed Network, Category, Artist, Playlist and Genre",
+            "description": "Remove a single network, category, artist, playlist, network, genre or service entity is in a users follows\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deletePersonalisedMusicFollowsByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedMusicFollowsByTypeById": {
+            "main": "./lib/actions/getPersonalisedMusicFollowsByTypeById.js",
+            "title": "Followed Network, Category, Artist, Playlist and Genre",
+            "description": "Check to see if a single network, category, artist, playlist, network, genre or service entity is in a users follows - determines UX of add button.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedMusicFollowsByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postPersonalisedMusicFollowsByTypeById": {
+            "main": "./lib/actions/postPersonalisedMusicFollowsByTypeById.js",
+            "title": "Followed Network, Category, Artist, Playlist and Genre",
+            "description": "Add a single network, category, artist, playlist, network, genre or service entity is in a users follows\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postPersonalisedMusicFollowsByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "putPersonalisedMusicFollowsByTypeById": {
+            "main": "./lib/actions/putPersonalisedMusicFollowsByTypeById.js",
+            "title": "Followed Network, Category, Artist, Playlist and Genre",
+            "description": "Update a single network, category, artist, playlist, network, genre or service entity is in a users follows\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putPersonalisedMusicFollowsByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteMusicPreferencesExport": {
+            "main": "./lib/actions/deleteMusicPreferencesExport.js",
+            "title": "Music Export Preferences",
+            "description": "Remove export preferences (e.g. 3rd party vendors, partner id's) for a given BBC Music user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteMusicPreferencesExport.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicPreferencesExport": {
+            "main": "./lib/actions/getMusicPreferencesExport.js",
+            "title": "Music Export Preferences",
+            "description": "Returns export preferences (e.g. 3rd party vendors, partner id's) for a given BBC Music user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicPreferencesExport.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postMusicPreferencesExport": {
+            "main": "./lib/actions/postMusicPreferencesExport.js",
+            "title": "Music Export Preferences",
+            "description": "Create export preferences (e.g. 3rd party vendors, partner id's) for a given BBC Music user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postMusicPreferencesExport.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteMusicPreferencesExportVendor": {
+            "main": "./lib/actions/deleteMusicPreferencesExportVendor.js",
+            "title": "Music Export Vendor Preferences",
+            "description": "Remove Vendor specific export preferences (e.g. 3rd party vendors, partner id's) for a given BBC Music user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteMusicPreferencesExportVendor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMusicPreferencesExportVendor": {
+            "main": "./lib/actions/getMusicPreferencesExportVendor.js",
+            "title": "Music Export Vendor Preferences",
+            "description": "Returns vendor specific export preferences for a given BBC Music user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMusicPreferencesExportVendor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postMusicPreferencesExportVendor": {
+            "main": "./lib/actions/postMusicPreferencesExportVendor.js",
+            "title": "Music Export Vendor Preferences",
+            "description": "Create Vendor specific export preferences (e.g. 3rd party vendors, partner id's) for a given BBC Music user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postMusicPreferencesExportVendor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "putMusicPreferencesExportVendor": {
+            "main": "./lib/actions/putMusicPreferencesExportVendor.js",
+            "title": "Music Export Vendor Preferences",
+            "description": "Update vendor specific export preferences for a given BBC Music user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putMusicPreferencesExportVendor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_networks_follows": {
+            "main": "./lib/actions/delete_my_networks_follows.js",
+            "title": "Unfollow network",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_networks_follows.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_networks_follows": {
+            "main": "./lib/actions/get_my_networks_follows.js",
+            "title": "List of followed networks",
+            "description": "List of followed networks for a given user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_networks_follows.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_networks_follows": {
+            "main": "./lib/actions/post_my_networks_follows.js",
+            "title": "Follow network",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_networks_follows.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_plays": {
+            "main": "./lib/actions/post_my_plays.js",
+            "title": "Write Play Event",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_plays.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "suggestContainer": {
+            "main": "./lib/actions/suggestContainer.js",
+            "title": "Suggested Playspace Container",
+            "description": "Suggested Playspace Container\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/suggestContainer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getContainer": {
+            "main": "./lib/actions/getContainer.js",
+            "title": "Playspace Container by ID",
+            "description": "Playspace Container by ID\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getContainer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRecommendations": {
+            "main": "./lib/actions/getRecommendations.js",
+            "title": "Recommended Programmes",
+            "description": "Recommended Programmes from the Audience Platforms' Recomendations Service\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRecommendations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedRadioFavourites": {
+            "main": "./lib/actions/getPersonalisedRadioFavourites.js",
+            "title": "Favourite Episodes and Clips",
+            "description": "List of favourited episodes and clips for a given user for iPlayer Radio.\n\nN.B.  Swagger schemas cannot currently handle multiple combinations of object in an array i.e. a mix of Episode\nand Clip Summaries so we are defining data as a Programme Summary here.  This will be resolved in V3 with full support for\n anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedRadioFavourites.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postPersonalisedRadioBatch": {
+            "main": "./lib/actions/postPersonalisedRadioBatch.js",
+            "title": "Favourite Episodes and Clips",
+            "description": "Add User favourites\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postPersonalisedRadioBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "putPersonalisedRadioBatch": {
+            "main": "./lib/actions/putPersonalisedRadioBatch.js",
+            "title": "Favourite Episodes and Clips",
+            "description": "Update user favourites\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putPersonalisedRadioBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedRadioFavouritesByType": {
+            "main": "./lib/actions/getPersonalisedRadioFavouritesByType.js",
+            "title": "Favourite Episodes and Clips by Type",
+            "description": "List of followed 'clips' or 'episode' items for a given iPlayer Radio user\n\nN.B.  Swagger schemas cannot currently handle multiple combinations of object in an array i.e. a mix of Episode\nand Clip Summaries so we are defining data as a Programme Summary here.  This will be resolved in V3 with full support for\n anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedRadioFavouritesByType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deletePersonalisedRadioByActivityTypeById": {
+            "main": "./lib/actions/deletePersonalisedRadioByActivityTypeById.js",
+            "title": "Favourite Episode or Clip",
+            "description": "Remove User favourite\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deletePersonalisedRadioByActivityTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedRadioByActivityTypeById": {
+            "main": "./lib/actions/getPersonalisedRadioByActivityTypeById.js",
+            "title": "Favourite Episode or Clip",
+            "description": "Check to see if a single clip or episode entity is in a users favourites - determines UX of add button.\n\nN.B.  Swagger schemas cannot currently handle multiple combinations of object in an array i.e. a mix of Episode\nand Clip Summaries so we are defining data as a Programme Summary here.  This will be resolved in V3 with full support for\n anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedRadioByActivityTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postPersonalisedRadioByActivityTypeById": {
+            "main": "./lib/actions/postPersonalisedRadioByActivityTypeById.js",
+            "title": "Favourite Episode or Clip",
+            "description": "Add User favourite\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postPersonalisedRadioByActivityTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "putPersonalisedRadioByActivityTypeById": {
+            "main": "./lib/actions/putPersonalisedRadioByActivityTypeById.js",
+            "title": "Favourite Episode or Clip",
+            "description": "Update user favourite\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putPersonalisedRadioByActivityTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedRadioFollows": {
+            "main": "./lib/actions/getPersonalisedRadioFollows.js",
+            "title": "Followed Brands and Series",
+            "description": "List of favourited brands and series for a given user for iPlayer Radio.\n\nN.B.  Swagger schemas cannot currently handle multiple combinations of object in an array i.e. a mix of Episode\nand Clip Summaries so we are defining data as a Programme Summary here.  This will be resolved in V3 with full support for\n anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedRadioFollows.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postPersonalisedRadioFollowsBatch": {
+            "main": "./lib/actions/postPersonalisedRadioFollowsBatch.js",
+            "title": "Followed Brands and Series",
+            "description": "Add 'brand' or 'series' items to a users iPlayer Radio follows\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postPersonalisedRadioFollowsBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "putPersonalisedRadioFollowsBatch": {
+            "main": "./lib/actions/putPersonalisedRadioFollowsBatch.js",
+            "title": "Followed Brands and Series",
+            "description": "Update 'brands' or 'series' items from a users iPlayer Radio follows\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putPersonalisedRadioFollowsBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedRadioFollowsByType": {
+            "main": "./lib/actions/getPersonalisedRadioFollowsByType.js",
+            "title": "Followed Brands or Series by Type",
+            "description": "List of followed 'brand' or 'series' items for a given iPlayer Radio user\n\nN.B.  Swagger schemas cannot currently handle multiple combinations of object in an array i.e. a mix of Episode\nand Clip Summaries so we are defining data as a Programme Summary here.  This will be resolved in V3 with full support for\n anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedRadioFollowsByType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deletePersonalisedRadioFollowsByTypeById": {
+            "main": "./lib/actions/deletePersonalisedRadioFollowsByTypeById.js",
+            "title": "Followed Brand or Series",
+            "description": "Remove 'brand' or 'series' items from a users iPlayer Radio follows\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deletePersonalisedRadioFollowsByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedRadioFollowsByTypeById": {
+            "main": "./lib/actions/getPersonalisedRadioFollowsByTypeById.js",
+            "title": "Followed Brand or Series",
+            "description": "Check to see if a single brand or series entity is in a users follows - determines UX of add button.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedRadioFollowsByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postPersonalisedRadioFollowsByTypeById": {
+            "main": "./lib/actions/postPersonalisedRadioFollowsByTypeById.js",
+            "title": "Followed Brand or Series",
+            "description": "Add 'brand' or 'series' items from a users iPlayer Radio follows\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postPersonalisedRadioFollowsByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "putPersonalisedRadioFollowsByTypeById": {
+            "main": "./lib/actions/putPersonalisedRadioFollowsByTypeById.js",
+            "title": "Followed Brand or Series",
+            "description": "Update 'brand' or 'series' items from a users iPlayer Radio follows\n\nN.B. Any HTML tags submitted in metadata will be removed\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putPersonalisedRadioFollowsByTypeById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPersonalisedRadioPlays": {
+            "main": "./lib/actions/getPersonalisedRadioPlays.js",
+            "title": "Played Episode or Clip",
+            "description": "Returns mixed episode and clip plays for a given BBC iPlayer radio user.\n\nN.B.  Swagger schemas cannot currently handle multiple combinations of object in an array i.e. a mix of Episode\nand Clip Summaries so we are defining data as a Programme Summary here.  This will be resolved in V3 with full support for\n anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonalisedRadioPlays.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPodcasts": {
+            "main": "./lib/actions/getPodcasts.js",
+            "title": "All Podcasts",
+            "description": "Retrieve all Podcasts\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPodcasts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPodcastsFeatured": {
+            "main": "./lib/actions/getPodcastsFeatured.js",
+            "title": "Featured Podcasts",
+            "description": "Retrieve featured podcasts\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPodcastsFeatured.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPodcastByPid": {
+            "main": "./lib/actions/getPodcastByPid.js",
+            "title": "Podcast",
+            "description": "Retrieve data about the podcast with the supplied PID\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPodcastByPid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPodcastEpisodes": {
+            "main": "./lib/actions/getPodcastEpisodes.js",
+            "title": "Podcast Episodes",
+            "description": "Retrieve all episodes for a specific podcast\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPodcastEpisodes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRadioNetworks": {
+            "main": "./lib/actions/getRadioNetworks.js",
+            "title": "Networks",
+            "description": "All iPlayer Radio networks - contains business logic for masterbrand and service relationships\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRadioNetworks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPopularEpisodesClips": {
+            "main": "./lib/actions/getPopularEpisodesClips.js",
+            "title": "Popular Episodes & Clips",
+            "description": "Retrieve Popular Episodes & Clips\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPopularEpisodesClips.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRadioProgrammes": {
+            "main": "./lib/actions/getRadioProgrammes.js",
+            "title": "Radio programmes",
+            "description": "Provides a paginated list of programmes by PID (brand, series, episode and clip). Accepts various filters and sorting methods.\n\nN.B.  Swagger schemas cannot currently handle multiple combinations of object in an array i.e. a mix of Episode\nand Clip Summaries so we are defining results as an array of Programme Summary here.  This will be resolved in V3 with full support for\n anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRadioProgrammes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRadioProgrammesByPid": {
+            "main": "./lib/actions/getRadioProgrammesByPid.js",
+            "title": "Available radio programme by Pid",
+            "description": "Find programmes by PID (brand, series, episode and clip)\n\nN.B.  Swagger schemas cannot currently handle multiple combinations of object in an array i.e. a mix of Episode\nand Clip Summaries so we are defining results as an array of Programme Summary here.  This will be resolved in V3 with full support for\n anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRadioProgrammesByPid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

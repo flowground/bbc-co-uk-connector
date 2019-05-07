@@ -1,0 +1,50 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "over16": {
+            "required": true,
+            "type": "boolean"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer"
+        },
+        "vendor": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "spotify",
+                "deezer",
+                "youtube",
+                "itunes"
+            ]
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "failed",
+                "done",
+                "pending"
+            ]
+        },
+        "X_Authentication_Provider": {
+            "required": true,
+            "type": "string",
+            "default": "idv5"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

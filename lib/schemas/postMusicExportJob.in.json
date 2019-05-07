@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "over16": {
+            "required": true,
+            "type": "boolean"
+        },
+        "vendor": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "spotify",
+                "deezer",
+                "youtube",
+                "itunes"
+            ]
+        },
+        "requestBody": {
+            "items": {
+                "properties": {
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "job_id": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "vendor": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "created_at",
+                    "id",
+                    "job_id",
+                    "status",
+                    "vendor"
+                ],
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "X_Authentication_Provider": {
+            "required": true,
+            "type": "string",
+            "default": "idv5"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string",
+            "default": "Bearer OAUTH_TOKEN"
+        },
+        "previous_pid": {
+            "required": true,
+            "type": "string"
+        },
+        "previous_container": {
+            "required": false,
+            "type": "string"
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

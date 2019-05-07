@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

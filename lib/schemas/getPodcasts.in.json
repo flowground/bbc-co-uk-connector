@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "offset": {
+            "required": false,
+            "type": "integer"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "title",
+                "-title",
+                "available_from_date",
+                "-available_from_date"
+            ]
+        },
+        "network": {
+            "required": false,
+            "type": "string"
+        },
+        "network_url_key": {
+            "required": false,
+            "type": "string"
+        },
+        "category": {
+            "required": false,
+            "type": "string"
+        },
+        "q": {
+            "required": false,
+            "type": "string"
+        },
+        "coverage": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "local",
+                "national",
+                "regional"
+            ]
+        },
+        "X_API_Key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
